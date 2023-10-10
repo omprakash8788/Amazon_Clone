@@ -1,0 +1,11 @@
+.Cart{
+    display: flex;
+    flex: 1 0 auto;
+    height: max-content;
+    padding: 23px;
+}
+
+.CartAd{
+    width: 100%;
+    margin-bottom: 14px;
+}

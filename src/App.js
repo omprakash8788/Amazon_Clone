@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import ListProduct from './components/ListProducts/ListProduct';
+import Order from './components/Orders/Order';
+import Cart from './components/carts/Cart';
+import Home from './components/home/Home';
+import Login from './components/login/Login';
+import Profile from './components/profile/Profile';
+import Footer from './layout/Footer/Footer';
+import Header from './layout/Header/Header';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={[<Header/>, <Home/>, <Footer/>]}/>
+          <Route path='/Login' element={<Login/>}/>
+          <Route path='/ListProducts' element={[<Header/>, <ListProduct/>, <Footer/>]}/>
+          <Route path='/Orders' element={[<Header/>, <Order/>, <Footer/>]}/>
+          <Route path='/Profile' element={<Profile/>}/>
+          <Route path='/Cart' element={[<Header/>, <Cart/>, <Footer/>]}/>
+
+          
+        
+        </Routes>
+      </div>
+    </Router>
+    </>
   );
 }
 
